@@ -1,0 +1,63 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+  "parameters": {
+    "vnetName": {
+      "value": "vnet02"
+    },
+    "dnsServer1": {
+      "value": "10.171.5.7"
+    },
+    "dnsServer2": {
+      "value": "10.171.5.8"
+    },
+    "location": {
+      "value": "westeurope"
+    },
+    "resourceGroup": {
+      "value": "rg01"
+    },
+    "vnet_addressPrefix": {
+      "value": "10.173.0.0/16"
+    },
+    "subnet1_name": {
+      "value": "subnet01"
+    },
+    "subnet1_AddressPrefix": {
+      "value": "10.173.0.0/24"
+    },
+    "subnet2_name": {
+      "value": "subnet02"
+    },
+    "subnet2_AddressPrefix": {
+      "value": "10.173.1.0/24"
+    },
+    "subnet3_name": {
+      "value": "subnet03"
+    },
+    "subnet3_AddressPrefix": {
+      "value": "10.173.2.0/24"
+    },
+    "NSG_Subnet1": {
+      "value": "nsg01"
+    },
+    "NSG_Subnet2": {
+      "value": "nsg02"
+    },
+    "NSG_Subnet3": {
+      "value": "nsg03"
+    },
+    "subnet1_rt": {
+      "value": "rt01"
+    },
+    "subnet2_rt": {
+      "value": "rt02"
+    },
+    "subnet3_rt": {
+      "value": "rt03"
+    },
+    "enableDdosProtection": {
+      "value": false
+    }
+  }
+  }

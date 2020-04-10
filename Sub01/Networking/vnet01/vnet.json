@@ -1,0 +1,131 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "vnetName": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "dnsserver1": {
+      "type": "string"
+    },
+    "dnsserver2": {
+      "type": "string"
+    },
+    "vnet_addressPrefix": {
+      "type": "string"
+    },
+    "subnet1_Name": {
+      "type": "string"
+    },
+    "subnet1_AddressPrefix": {
+      "type": "string"
+    },
+    "subnet2_Name": {
+      "type": "string"
+    },
+    "subnet2_AddressPrefix": {
+      "type": "string"
+    },
+    "subnet3_Name": {
+      "type": "string"
+    },
+    "subnet3_AddressPrefix": {
+      "type": "string"
+    },
+    "subnet1_rt": {
+      "type": "string"
+    },
+    "subnet2_rt": {
+      "type": "string"
+    },
+    "subnet3_rt": {
+      "type": "string"
+    },
+    "NSG_Subnet1": {
+      "type": "string"
+    },
+    "NSG_Subnet2": {
+      "type": "string"
+    },
+    "NSG_Subnet3": {
+      "type": "string"
+    },
+    "enableDdosProtection": {
+      "type": "bool"
+    }
+  },
+  "variables": {
+    "nsg1": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('NSG_Subnet1'))]",
+    "nsg2": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('NSG_Subnet2'))]",
+    "nsg3": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('NSG_Subnet3'))]",
+    "rt1": "[resourceId('Microsoft.Network/routeTables', parameters('subnet1_rt'))]",
+    "rt2": "[resourceId('Microsoft.Network/routeTables', parameters('subnet2_rt'))]",
+    "rt3": "[resourceId('Microsoft.Network/routeTables', parameters('subnet3_rt'))]"
+  },
+  "resources": [
+    {
+      "apiVersion": "2019-04-01",
+      "name": "[parameters('vnetName')]",
+      "type": "Microsoft.Network/virtualNetworks",
+      "location": "[parameters('location')]",
+      "properties": {
+        "addressSpace": {
+          "addressPrefixes": [
+            "[parameters('vnet_addressPrefix')]"
+          ]
+        },
+        "dhcpOptions": {
+          "dnsServers": [
+            "[parameters('dnsserver1')]",
+            "[parameters('dnsserver2')]"
+          ]
+        },
+        "subnets": [
+          {
+            "name": "[parameters('subnet1_Name')]",
+            "properties": {
+              "addressPrefix": "[parameters('subnet1_AddressPrefix')]",
+              "networkSecurityGroup": {
+                "id": "[variables('nsg1')]"
+              },
+              "routeTable": {
+                "id": "[variables('rt1')]"
+              },
+              "addressPrefixes": []
+            }
+          },
+          {
+            "name": "[parameters('subnet2_Name')]",
+            "properties": {
+              "addressPrefix": "[parameters('subnet2_AddressPrefix')]",
+              "networkSecurityGroup": {
+                "id": "[variables('nsg2')]"
+              },
+              "routeTable": {
+                "id": "[variables('rt2')]"
+              },
+              "addressPrefixes": []
+            }
+          },
+          {
+            "name": "[parameters('subnet3_Name')]",
+            "properties": {
+              "addressPrefix": "[parameters('subnet3_AddressPrefix')]",
+              "networkSecurityGroup": {
+                "id": "[variables('nsg3')]"
+              },
+              "routeTable": {
+                "id": "[variables('rt3')]"
+              },
+              "addressPrefixes": []
+            }
+          }
+        ],
+        "enableDdosProtection": "[parameters('enableDdosProtection')]"
+      }
+    }
+  ]
+}

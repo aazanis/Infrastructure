@@ -1,0 +1,149 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "subnet1_rt": {
+      "type": "string"
+    },
+    "subnet2_rt": {
+      "type": "string"
+    },
+    "subnet3_rt": {
+      "type": "string"
+    },
+    "subnet1_rtname1": {
+      "type": "string"
+    },
+    "subnet1_rtname2": {
+      "type": "string"
+    },
+    "subnet1_rtname3": {
+      "type": "string"
+    },
+    "subnet2_rtname1": {
+      "type": "string"
+    },
+    "subnet2_rtname2": {
+      "type": "string"
+    },
+    "subnet2_rtname3": {
+      "type": "string"
+    },
+    "subnet3_rtname1": {
+      "type": "string"
+    },
+    "subnet3_rtname2": {
+      "type": "string"
+    },
+    "subnet3_rtname3": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    }
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Network/routeTables",
+      "name": "[parameters('subnet1_rt')]",
+      "apiVersion": "2015-06-15",
+      "location": "[parameters('location')]",
+      "properties": {
+        "routes": [
+          {
+            "name": "[parameters('subnet1_rtname1')]",
+            "properties": {
+              "addressPrefix": "10.171.0.0/24",
+              "nextHopType": "VirtualAppliance",
+              "nextHopIpAddress": "10.171.1.10"
+            }
+          },
+          {
+            "name": "[parameters('subnet1_rtname2')]",
+            "properties": {
+              "addressPrefix": "10.171.1.0/24",
+              "nextHopType": "VirtualAppliance",
+              "nextHopIpAddress": "10.171.1.10"
+            }
+          },
+          {
+            "name": "[parameters('subnet1_rtname3')]",
+            "properties": {
+              "addressPrefix": "0.0.0.0/0",
+              "nextHopType": "VirtualAppliance",
+              "nextHopIpAddress": "10.171.1.10"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Microsoft.Network/routeTables",
+      "name": "[parameters('subnet2_rt')]",
+      "apiVersion": "2015-06-15",
+      "location": "[parameters('location')]",
+      "properties": {
+        "routes": [
+          {
+            "name": "[parameters('subnet2_rtname1')]",
+            "properties": {
+              "addressPrefix": "10.171.0.0/24",
+              "nextHopType": "VirtualAppliance",
+              "nextHopIpAddress": "10.171.1.10"
+            }
+          },
+          {
+            "name": "[parameters('subnet2_rtname2')]",
+            "properties": {
+              "addressPrefix": "10.171.1.0/24",
+              "nextHopType": "VirtualAppliance",
+              "nextHopIpAddress": "10.171.1.10"
+            }
+          },
+          {
+            "name": "[parameters('subnet2_rtname3')]",
+            "properties": {
+              "addressPrefix": "0.0.0.0/0",
+              "nextHopType": "VirtualAppliance",
+              "nextHopIpAddress": "10.171.1.10"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Microsoft.Network/routeTables",
+      "name": "[parameters('subnet3_rt')]",
+      "apiVersion": "2015-06-15",
+      "location": "[parameters('location')]",
+      "properties": {
+        "routes": [
+          {
+            "name": "[parameters('subnet3_rtname1')]",
+            "properties": {
+              "addressPrefix": "10.171.0.0/24",
+              "nextHopType": "VirtualAppliance",
+              "nextHopIpAddress": "10.171.1.10"
+            }
+          },
+          {
+            "name": "[parameters('subnet3_rtname2')]",
+            "properties": {
+              "addressPrefix": "10.171.1.0/24",
+              "nextHopType": "VirtualAppliance",
+              "nextHopIpAddress": "10.171.1.10"
+            }
+          },
+          {
+            "name": "[parameters('subnet3_rtname3')]",
+            "properties": {
+              "addressPrefix": "0.0.0.0/0",
+              "nextHopType": "VirtualAppliance",
+              "nextHopIpAddress": "10.171.1.10"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

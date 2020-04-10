@@ -1,0 +1,18 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "value": "westeurope"
+    },
+    "NSG_Subnet1": {
+      "value": "nsg1"
+    },
+    "NSG_Subnet2": {
+      "value": "nsg2"
+    },
+    "NSG_Subnet3": {
+      "value": "nsg3"
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+  "parameters": {
+    "subnet1_rt": {
+      "value": "rt01"
+    },
+    "subnet2_rt": {
+      "value": "rt02"
+    },
+    "subnet3_rt": {
+      "value": "rt03"
+    },
+    "subnet1_rtname1": {
+      "value": "route1"
+    },
+    "subnet1_rtname2": {
+      "value": "route2"
+    },
+    "subnet1_rtname3": {
+      "value": "route3"
+    },
+    "subnet2_rtname1": {
+      "value": "route1"
+    },
+    "subnet2_rtname2": {
+      "value": "route2"
+    },
+    "subnet2_rtname3": {
+      "value": "route3"
+    },
+    "subnet3_rtname1": {
+      "value": "route1"
+    },
+    "subnet3_rtname2": {
+      "value": "route2"
+    },
+    "subnet3_rtname3": {
+      "value": "route3"
+    },
+    "location": {
+      "value": "westeurope"
+    }
+  }
+}

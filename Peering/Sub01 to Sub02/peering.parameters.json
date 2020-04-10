@@ -1,0 +1,21 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"existingLocalVirtualNetworkName": {
+			"value": "vnet01"
+		},
+		"existingRemoteVirtualNetworkName": {
+			"value": "vnet01"
+		},
+		"existingRemoteVirtualNetworkResourceGroupName": {
+			"value": "rg01"
+		},
+		"peerVnetSubscriptionId": {
+			"value": "7d85c8d1-ef6d-42cb-9124-0b315989d8b8"
+		},
+		"location": {
+			"value": "westeurope"
+		}
+	}
+}
