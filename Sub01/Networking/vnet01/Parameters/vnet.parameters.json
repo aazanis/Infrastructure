@@ -36,22 +36,22 @@
       "value": "10.173.2.0/24"
     },
     "NSG_Subnet1": {
-      "value": "nsg01"
+      "value": "nsg1"
     },
     "NSG_Subnet2": {
-      "value": "nsg02"
+      "value": "nsg2"
     },
     "NSG_Subnet3": {
-      "value": "nsg03"
+      "value": "nsg3"
     },
     "subnet1_rt": {
-      "value": "rt01"
+      "value": "rt1"
     },
     "subnet2_rt": {
-      "value": "rt02"
+      "value": "rt2"
     },
     "subnet3_rt": {
-      "value": "rt03"
+      "value": "rt3"
     },
     "enableDdosProtection": {
       "value": false
