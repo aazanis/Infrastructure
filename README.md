@@ -1,6 +1,6 @@
 # Infrastructure
 
-Deploy a Infrastructure in Azure with ARM templates
+Deploy an infrastructure in Azure with ARM templates
 
 - Routes
 - NSG's
