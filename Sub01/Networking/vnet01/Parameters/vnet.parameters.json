@@ -14,9 +14,6 @@
     "location": {
       "value": "westeurope"
     },
-    "resourceGroup": {
-      "value": "rg01"
-    },
     "vnet_addressPrefix": {
       "value": "10.173.0.0/16"
     },
