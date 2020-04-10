@@ -45,13 +45,13 @@
       "value": "nsg3"
     },
     "subnet1_rt": {
-      "value": "rt1"
+      "value": "rt01"
     },
     "subnet2_rt": {
-      "value": "rt2"
+      "value": "rt02"
     },
     "subnet3_rt": {
-      "value": "rt3"
+      "value": "rt03"
     },
     "enableDdosProtection": {
       "value": false
